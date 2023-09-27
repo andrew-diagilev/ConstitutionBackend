@@ -31,6 +31,11 @@ abstract class AbstractService<T, ID extends Serializable, R extends BaseReposit
     }
 
     @Override
+    public List<T> saveAll(List<T> entityList) {
+        return repository.saveAll(entityList);
+    }
+
+    @Override
     public void deleteById(ID id) {
 
     }

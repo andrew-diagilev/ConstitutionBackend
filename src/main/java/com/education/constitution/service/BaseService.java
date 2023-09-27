@@ -9,4 +9,5 @@ public interface BaseService <T, ID extends Serializable>{
     Optional<T> getById(ID id);
     T save(T entity);
     void deleteById(ID id);
+    List<T> saveAll(List<T> entityList);
 }

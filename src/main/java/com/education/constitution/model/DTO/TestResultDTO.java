@@ -7,6 +7,8 @@ public class TestResultDTO {
     private long questionId;
     private long answerId;
 
+    private long lessonId;
+
     public long getUserId() {
         return userId;
     }
@@ -37,5 +39,13 @@ public class TestResultDTO {
 
     public void setAnswerId(long answerId) {
         this.answerId = answerId;
+    }
+
+    public long getLessonId() {
+        return lessonId;
+    }
+
+    public void setLessonId(long lessonId) {
+        this.lessonId = lessonId;
     }
 }
