@@ -1,7 +1,7 @@
 package com.education.constitution.controller;
 
 import com.education.constitution.model.DTO.AuthenticationRequest;
-import com.education.constitution.model.User;
+import com.education.constitution.model.users.User;
 import com.education.constitution.security.JwtTokenProvider;
 import com.education.constitution.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

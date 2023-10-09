@@ -1,7 +1,7 @@
-package com.education.constitution.repository;
+package com.education.constitution.repository.lessons;
 
-import com.education.constitution.model.Summary;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.education.constitution.model.lessons.Summary;
+import com.education.constitution.repository.BaseRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

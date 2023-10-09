@@ -1,5 +1,7 @@
-package com.education.constitution.model;
+package com.education.constitution.model.users;
 
+import com.education.constitution.model.users.AccessCode;
+import com.education.constitution.model.users.Role;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -9,11 +11,13 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(unique = true)
     private String userName;
-
     private String name;
     private String email;
     private String password;
+
+    private boolean verified;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles", joinColumns ={@JoinColumn(name="user_id", referencedColumnName = "id")},
             inverseJoinColumns={@JoinColumn(name="role_id", referencedColumnName = "id")})
@@ -92,6 +96,13 @@ public class User {
         this.roles = roles;
     }
 
+    public boolean isVerified() {
+        return verified;
+    }
+
+    public void setVerified(boolean verified) {
+        this.verified = verified;
+    }
 }
 
 

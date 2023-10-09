@@ -1,4 +1,4 @@
-package com.education.constitution.model;
+package com.education.constitution.model.users;
 
 import jakarta.persistence.*;
 import java.util.List;

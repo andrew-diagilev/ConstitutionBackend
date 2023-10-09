@@ -1,17 +1,18 @@
-package com.education.constitution.model;
+package com.education.constitution.model.tests;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
-public class Summary {
+public class FinalQuestion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne
-    @JoinColumn(name = "lesson_id")
-    private Lesson lesson;
-    @Column(columnDefinition = "TEXT")
     private String text;
+
+    @OneToMany(mappedBy = "finalQuestion", cascade = CascadeType.ALL)
+    private List<FinalAnswer> answers;
 
     public Long getId() {
         return id;
@@ -21,19 +22,19 @@ public class Summary {
         this.id = id;
     }
 
-    public Lesson getLesson() {
-        return lesson;
-    }
-
-    public void setLesson(Lesson lesson) {
-        this.lesson = lesson;
-    }
-
     public String getText() {
         return text;
     }
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public List<FinalAnswer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(List<FinalAnswer> answers) {
+        this.answers = answers;
     }
 }

@@ -1,12 +1,8 @@
 package com.education.constitution.service;
 
-import com.education.constitution.exception.NotFoundException;
-import com.education.constitution.model.Lesson;
-import com.education.constitution.repository.LessonRepository;
-import com.education.constitution.repository.UserRepository;
+import com.education.constitution.model.lessons.Lesson;
+import com.education.constitution.repository.lessons.LessonRepository;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class LessonService extends AbstractService<Lesson, Long, LessonRepository> {

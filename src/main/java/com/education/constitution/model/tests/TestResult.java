@@ -1,5 +1,6 @@
-package com.education.constitution.model;
+package com.education.constitution.model.tests;
 
+import com.education.constitution.model.users.User;
 import jakarta.persistence.*;
 
 @Entity

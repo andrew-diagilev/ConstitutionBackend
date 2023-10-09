@@ -1,13 +1,14 @@
 package com.education.constitution.service;
 
-import com.education.constitution.model.AccessCode;
-import com.education.constitution.repository.AccessCodeRepository;
+import com.education.constitution.model.users.AccessCode;
+import com.education.constitution.repository.users.AccessCodeRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 @Service
@@ -22,6 +23,10 @@ public class AccessCodeService extends AbstractService<AccessCode, Long, AccessC
 
     public AccessCodeService(AccessCodeRepository repository) {
         super(repository);
+    }
+
+    public Optional<AccessCode> findByCode(String code) {
+        return repository.findByCode(code);
     }
 
     @Transactional

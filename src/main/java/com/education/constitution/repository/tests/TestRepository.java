@@ -1,6 +1,7 @@
-package com.education.constitution.repository;
+package com.education.constitution.repository.tests;
 
-import com.education.constitution.model.Test;
+import com.education.constitution.model.tests.Test;
+import com.education.constitution.repository.BaseRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

@@ -1,15 +1,16 @@
 package com.education.constitution.controller;
 
 import com.education.constitution.exception.NotFoundException;
-import com.education.constitution.model.Summary;
-import com.education.constitution.model.TestResult;
-import com.education.constitution.repository.TestResultRepository;
+import com.education.constitution.model.lessons.Summary;
+import com.education.constitution.repository.tests.TestResultRepository;
 import com.education.constitution.service.SummaryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/summaries")
@@ -31,6 +32,10 @@ public class SummaryController {
             e.printStackTrace();
             throw e;
         }
+    }
 
+    @GetMapping("all")
+    public List<Summary> getAllSummaries(){
+       return summaryService.getAll();
     }
 }

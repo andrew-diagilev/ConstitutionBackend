@@ -1,6 +1,6 @@
 package com.education.constitution.security;
 
-import com.education.constitution.model.Role;
+import com.education.constitution.model.users.Role;
 import io.jsonwebtoken.*;
 import jakarta.annotation.PostConstruct;
 import jakarta.servlet.http.HttpServletRequest;

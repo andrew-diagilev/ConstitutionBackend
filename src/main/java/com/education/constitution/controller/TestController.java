@@ -1,8 +1,8 @@
 package com.education.constitution.controller;
 
 import com.education.constitution.model.DTO.TestResultDTO;
-import com.education.constitution.model.Test;
-import com.education.constitution.model.TestResult;
+import com.education.constitution.model.tests.Test;
+import com.education.constitution.model.tests.TestResult;
 import com.education.constitution.service.TestResultMapper;
 import com.education.constitution.service.TestService;
 import com.education.constitution.service.UserService;

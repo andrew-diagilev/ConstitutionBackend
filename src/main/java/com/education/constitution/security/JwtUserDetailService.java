@@ -1,7 +1,7 @@
 package com.education.constitution.security;
 
 
-import com.education.constitution.model.User;
+import com.education.constitution.model.users.User;
 import com.education.constitution.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

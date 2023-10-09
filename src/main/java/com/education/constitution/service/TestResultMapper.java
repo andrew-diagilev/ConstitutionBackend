@@ -1,9 +1,17 @@
 package com.education.constitution.service;
 
 import com.education.constitution.exception.NotFoundException;
-import com.education.constitution.model.*;
 import com.education.constitution.model.DTO.TestResultDTO;
-import com.education.constitution.repository.*;
+import com.education.constitution.model.tests.Answer;
+import com.education.constitution.model.tests.Question;
+import com.education.constitution.model.tests.Test;
+import com.education.constitution.model.tests.TestResult;
+import com.education.constitution.model.users.User;
+import com.education.constitution.repository.tests.AnswerRepository;
+import com.education.constitution.repository.tests.QuestionRepository;
+import com.education.constitution.repository.tests.TestRepository;
+import com.education.constitution.repository.tests.TestResultRepository;
+import com.education.constitution.repository.users.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
 package com.education.constitution.controller;
 
-import com.education.constitution.model.Lesson;
+import com.education.constitution.model.lessons.Lesson;
 import com.education.constitution.service.LessonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

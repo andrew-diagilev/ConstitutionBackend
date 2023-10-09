@@ -1,7 +1,7 @@
-package com.education.constitution.repository;
+package com.education.constitution.repository.tests;
 
-import com.education.constitution.model.TestResult;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.education.constitution.model.tests.TestResult;
+import com.education.constitution.repository.BaseRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

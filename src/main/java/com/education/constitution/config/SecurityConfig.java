@@ -23,11 +23,13 @@ public class SecurityConfig {
 
     private static final String ADMIN_ENDPOINT = "/api/admin/**";
     private static final String LOGIN_ENDPOINT = "/api/auth/login";
+    private static final String REGISTRATION_ENDPOINT = "/api/registration/**";
 
     @Autowired
     public SecurityConfig(JwtTokenProvider jwtTokenProvider) {
         this.jwtTokenProvider = jwtTokenProvider;
     }
+
 
     @Bean
     public AuthenticationManager authenticationManager(
@@ -43,6 +45,7 @@ public class SecurityConfig {
                 .httpBasic(basic -> basic.disable())
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)))
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(REGISTRATION_ENDPOINT).permitAll()
                         .requestMatchers(LOGIN_ENDPOINT).permitAll()
                         .requestMatchers(ADMIN_ENDPOINT).hasRole("ADMIN")
                         .requestMatchers(HttpMethod.GET, "/css/**", "/js/**", "/index*", "/static/**", "/*.js", "/*.svg", "/*.json", "/*.ico", "/*.css", "/*.scss", "/*.jpg", "/*.png", "/*.html", "/auth", "/monitoring", "/history", "/video", "/meteostations", "/users", "/", "/stream/**", "/policy/**", "/icon/**")

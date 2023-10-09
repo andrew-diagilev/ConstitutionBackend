@@ -12,7 +12,7 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping(value = "/api/admin/access_code")
-public class AccessCodeController {
+public class AdminAccessCodeController {
     @Autowired
     AccessCodeService accessCodeService;
 
@@ -20,7 +20,7 @@ public class AccessCodeController {
     PdfGenerator pdfGenerator;
 
     @GetMapping("/create/{amount}")
-    public ResponseEntity<byte[]> getTestByLessonId(@PathVariable Integer amount) {
+    public ResponseEntity<byte[]> createAccessCodes(@PathVariable Integer amount) {
         try {
             byte[] pdfBytes = pdfGenerator.generatePdfWithKeys(accessCodeService.createAccessCodesList(amount));
 

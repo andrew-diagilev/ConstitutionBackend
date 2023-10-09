@@ -1,12 +1,11 @@
 package com.education.constitution.service;
 
 import com.education.constitution.exception.NotFoundException;
-import com.education.constitution.model.Answer;
-import com.education.constitution.model.Question;
-import com.education.constitution.model.Test;
-import com.education.constitution.model.TestResult;
-import com.education.constitution.repository.TestRepository;
-import com.education.constitution.repository.TestResultRepository;
+import com.education.constitution.model.tests.Answer;
+import com.education.constitution.model.tests.Test;
+import com.education.constitution.model.tests.TestResult;
+import com.education.constitution.repository.tests.TestRepository;
+import com.education.constitution.repository.tests.TestResultRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

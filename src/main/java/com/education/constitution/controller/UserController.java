@@ -1,6 +1,6 @@
 package com.education.constitution.controller;
 
-import com.education.constitution.model.User;
+import com.education.constitution.model.users.User;
 import com.education.constitution.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -37,12 +37,12 @@ public class UserController {
         return userService.createUser(user.getUserName(), user.getName(), user.getPassword(), user.getRoles(), user.getEmail());
     }
 
-        @CrossOrigin
-        @RequestMapping(value = "/api/admin/user/delete", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
-        @ResponseBody
-        public void deleteUser(@RequestBody Long id) {
-            userService.deleteById(id);
-        }
+    @CrossOrigin
+    @RequestMapping(value = "/api/admin/user/delete", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public void deleteUser(@RequestBody Long id) {
+        userService.deleteById(id);
+    }
 
         /*@CrossOrigin
         @RequestMapping(value = "/api/admin/user/edit", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)

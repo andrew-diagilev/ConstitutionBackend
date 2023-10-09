@@ -1,10 +1,8 @@
 package com.education.constitution.service;
 
 import com.education.constitution.exception.NotFoundException;
-import com.education.constitution.model.Lesson;
-import com.education.constitution.model.Summary;
-import com.education.constitution.repository.LessonRepository;
-import com.education.constitution.repository.SummaryRepository;
+import com.education.constitution.model.lessons.Summary;
+import com.education.constitution.repository.lessons.SummaryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

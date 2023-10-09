@@ -1,6 +1,6 @@
-package com.education.constitution.model;
+package com.education.constitution.model.tests;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.education.constitution.model.lessons.Lesson;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 

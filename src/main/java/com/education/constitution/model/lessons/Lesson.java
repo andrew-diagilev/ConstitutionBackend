@@ -1,4 +1,4 @@
-package com.education.constitution.model;
+package com.education.constitution.model.lessons;
 
 import jakarta.persistence.*;
 

@@ -1,7 +1,7 @@
 package com.education.constitution.security;
 
-import com.education.constitution.model.Role;
-import com.education.constitution.model.User;
+import com.education.constitution.model.users.Role;
+import com.education.constitution.model.users.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 

@@ -1,6 +1,6 @@
-package com.education.constitution.repository;
+package com.education.constitution.repository.users;
 
-import com.education.constitution.model.Role;
+import com.education.constitution.model.users.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RoleRepository extends JpaRepository<Role, Integer> {
