@@ -1,8 +1,6 @@
 package com.education.constitution.model.lessons;
 
-import com.education.constitution.model.tests.FinalTest;
 import jakarta.persistence.*;
-import java.util.List;
 
 @Entity
 public class LessonBlock {
@@ -11,9 +9,6 @@ public class LessonBlock {
     private Long id;
     private String name;
     private String text;
-
-    @OneToMany(mappedBy = "lessonBlock", cascade = CascadeType.ALL)
-    private List<FinalTest> finalTests;
 
     public Long getId() {
         return id;
@@ -39,11 +34,4 @@ public class LessonBlock {
         this.text = text;
     }
 
-    public List<FinalTest> getFinalTests() {
-        return finalTests;
-    }
-
-    public void setFinalTests(List<FinalTest> finalTests) {
-        this.finalTests = finalTests;
-    }
 }

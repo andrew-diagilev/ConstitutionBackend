@@ -1,9 +1,10 @@
-package com.education.constitution.model.tests;
+package com.education.constitution.model;
 
+import com.education.constitution.model.tests.Question;
 import jakarta.persistence.*;
 
-@Entity
-public class FinalAnswer {
+@MappedSuperclass
+public abstract class AbstractAnswer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -13,7 +14,7 @@ public class FinalAnswer {
 
     @ManyToOne
     @JoinColumn(name = "question_id")
-    private FinalQuestion question;
+    private Question question;
 
     @Transient
     private boolean answered;
@@ -50,3 +51,4 @@ public class FinalAnswer {
         this.answered = answered;
     }
 }
+

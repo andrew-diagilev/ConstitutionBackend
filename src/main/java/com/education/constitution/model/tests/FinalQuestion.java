@@ -9,10 +9,16 @@ public class FinalQuestion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(columnDefinition = "TEXT")
     private String text;
 
-    @OneToMany(mappedBy = "finalQuestion", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
     private List<FinalAnswer> answers;
+
+    @ManyToOne
+    @JoinColumn(name = "test_id")
+    private FinalTest test;
 
     public Long getId() {
         return id;
@@ -37,4 +43,5 @@ public class FinalQuestion {
     public void setAnswers(List<FinalAnswer> answers) {
         this.answers = answers;
     }
+
 }

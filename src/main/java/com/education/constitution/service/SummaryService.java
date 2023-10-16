@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SummaryService extends AbstractService<Summary, Long, SummaryRepository> {
-    @Autowired
-    private SummaryRepository summaryRepository;
+    private final SummaryRepository summaryRepository;
 
-    public SummaryService(SummaryRepository summaryRepository) {
+    public SummaryService( SummaryRepository summaryRepository) {
         super(summaryRepository);
+        this.summaryRepository = summaryRepository;
     }
 
     public Summary getSummaryByLessonId(Long lessonId) {

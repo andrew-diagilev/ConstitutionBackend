@@ -1,4 +1,4 @@
-package com.education.constitution.controller;
+package com.education.constitution.controller.users;
 
 import com.education.constitution.model.DTO.AuthenticationRequest;
 import com.education.constitution.model.users.User;

@@ -1,8 +1,7 @@
-package com.education.constitution.controller;
+package com.education.constitution.controller.lessons;
 
 import com.education.constitution.model.lessons.Lesson;
 import com.education.constitution.service.LessonService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +12,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/lessons")
 public class LessonController {
-    @Autowired
-    private LessonService lessonService;
-
+    private final LessonService lessonService;
+    public LessonController(LessonService lessonService) {
+        this.lessonService = lessonService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Lesson>> getAllLessons() {

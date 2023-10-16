@@ -1,4 +1,4 @@
-package com.education.constitution.controller;
+package com.education.constitution.controller.users;
 
 import com.education.constitution.model.DTO.CommonResponseDTO;
 import com.education.constitution.service.AccessCodeService;

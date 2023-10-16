@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
-abstract class AbstractService<T, ID extends Serializable, R extends BaseRepository<T, ID>> implements BaseService<T, ID> {
+public abstract class AbstractService<T, ID extends Serializable, R extends BaseRepository<T, ID>> implements BaseService<T, ID> {
     protected final R repository;
 
     @Autowired

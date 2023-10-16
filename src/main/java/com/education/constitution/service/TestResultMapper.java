@@ -10,7 +10,6 @@ import com.education.constitution.model.users.User;
 import com.education.constitution.repository.tests.AnswerRepository;
 import com.education.constitution.repository.tests.QuestionRepository;
 import com.education.constitution.repository.tests.TestRepository;
-import com.education.constitution.repository.tests.TestResultRepository;
 import com.education.constitution.repository.users.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,19 +20,13 @@ public class TestResultMapper {
     private final UserRepository userRepository;
     private final QuestionRepository questionRepository;
     private final AnswerRepository answerRepository;
-    private final TestResultRepository testResultRepository;
-
     private final TestRepository testRepository;
 
-
     @Autowired
-    public TestResultMapper(UserRepository userRepository,
-                            QuestionRepository questionRepository,
-                            AnswerRepository answerRepository, TestResultRepository testResultRepository, TestRepository testRepository) {
+    public TestResultMapper(UserRepository userRepository, QuestionRepository questionRepository, AnswerRepository answerRepository, TestRepository testRepository) {
         this.userRepository = userRepository;
         this.questionRepository = questionRepository;
         this.answerRepository = answerRepository;
-        this.testResultRepository = testResultRepository;
         this.testRepository = testRepository;
     }
 
@@ -43,15 +36,10 @@ public class TestResultMapper {
         Question question = questionRepository.findById(dto.getQuestionId()).orElseThrow(() -> new NotFoundException("Question with id: " + dto.getQuestionId() + " not found"));
         Answer answer = answerRepository.findById(dto.getAnswerId()).orElseThrow(() -> new NotFoundException("Answer with id: " + dto.getAnswerId() + " not found"));
         Test test = testRepository.findById(dto.getTestId()).orElseThrow(() -> new NotFoundException("Test with id: " + dto.getAnswerId() + " not found"));
-
         testResult.setTest(test);
         testResult.setUser(user);
         testResult.setQuestion(question);
         testResult.setAnswer(answer);
-
-        // Дополнительная логика и установка других полей
         return testResult;
     }
-
-
 }

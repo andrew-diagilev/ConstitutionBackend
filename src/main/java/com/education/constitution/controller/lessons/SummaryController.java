@@ -1,4 +1,4 @@
-package com.education.constitution.controller;
+package com.education.constitution.controller.lessons;
 
 import com.education.constitution.exception.NotFoundException;
 import com.education.constitution.model.lessons.Summary;
