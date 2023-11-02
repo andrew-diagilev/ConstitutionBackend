@@ -1,3 +1,4 @@
+/*
 package com.education.constitution.model.tests;
 
 import com.education.constitution.model.lessons.LessonBlock;
@@ -43,4 +44,4 @@ public class FinalTest {
     public void setQuestions(List<FinalQuestion> questions) {
         this.questions = questions;
     }
-}
+}*/

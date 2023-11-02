@@ -9,4 +9,5 @@ import java.util.Optional;
 @Repository
 public interface TestRepository extends BaseRepository<Test, Long> {
     Optional<Test> findByLessonId(Long lessonId);
+    Optional<Test> findByLessonBlockId(Long lessonBlockId);
 }

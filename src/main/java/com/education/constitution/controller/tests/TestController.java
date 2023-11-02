@@ -20,12 +20,16 @@ public class TestController {
         this.testService = testService;
     }
 
-
     @GetMapping("/")
     public Test getTestByLessonId(@RequestParam Long lessonId, @RequestParam Long userId) {
         //Тестовая тсрока
        return testService.getTestByLessonIdAndUserId(lessonId, userId);
-       /* return testService.getTestByLessonId(lessonId);*/
+    }
+
+    @GetMapping("/final")
+    public Test getTestByLessonBlockId(@RequestParam Long lessonBlockId, @RequestParam Long userId) {
+        //Тестовая тсрока
+        return testService.getTestByLessonBlockIdAndUserId(lessonBlockId, userId);
     }
 
     @PostMapping("/submit-answer")
@@ -37,6 +41,12 @@ public class TestController {
         return testService.getTestByLessonIdAndUserId(testResultDTO.getLessonId(), testResultDTO.getUserId());
     }
 
-
-    // Другие методы, если требуется
+    @PostMapping("final/submit-answer")
+    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseBody
+    public Test createFinal(@RequestBody TestResultDTO testResultDTO) {
+        TestResult testResult = testResultMapper.dtoToEntity(testResultDTO);
+        testService.createTestResult(testResult);
+        return testService.getTestByLessonBlockIdAndUserId(testResultDTO.getLessonBlockId(), testResultDTO.getUserId());
+    }
 }

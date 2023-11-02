@@ -1,3 +1,4 @@
+/*
 package com.education.constitution.model.tests;
 
 import jakarta.persistence.*;
@@ -45,3 +46,4 @@ public class FinalQuestion {
     }
 
 }
+*/

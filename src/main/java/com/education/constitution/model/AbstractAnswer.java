@@ -1,3 +1,4 @@
+/*
 package com.education.constitution.model;
 
 import com.education.constitution.model.tests.Question;
@@ -52,3 +53,4 @@ public abstract class AbstractAnswer {
     }
 }
 
+*/

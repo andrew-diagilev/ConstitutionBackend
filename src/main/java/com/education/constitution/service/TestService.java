@@ -38,6 +38,14 @@ public class TestService extends AbstractService<Test, Long, TestRepository> {
         return test;
     }
 
+    public Test getTestByLessonBlockIdAndUserId(Long lessonBlockId, Long userId) {
+        Test test = repository.findByLessonBlockId(lessonBlockId).orElseThrow(() -> new NotFoundException("Test not found with lessonBlockId: " + lessonBlockId));
+        List<TestResult> testResultList = testResultRepository.findByTestIdAndUserId(test.getId(), userId);
+        updateAnsweredField(testResultList, test);
+        return test;
+    }
+
+
     private void updateAnsweredField(List<TestResult> testResults, Test test) {
         List<Answer> answers = test.getQuestions()
                 .stream()

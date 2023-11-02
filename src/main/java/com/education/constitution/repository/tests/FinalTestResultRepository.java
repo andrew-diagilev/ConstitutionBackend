@@ -1,3 +1,4 @@
+/*
 package com.education.constitution.repository.tests;
 
 import com.education.constitution.model.tests.FinalTestResult;
@@ -12,3 +13,4 @@ public interface FinalTestResultRepository extends BaseRepository<FinalTestResul
     List<FinalTestResult> findByTestIdAndUserId(Long finalTestId, Long userId);
 
 }
+*/

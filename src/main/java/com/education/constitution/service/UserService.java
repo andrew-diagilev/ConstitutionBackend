@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService extends AbstractService<User, Long, UserRepository> {
@@ -49,12 +50,16 @@ public class UserService extends AbstractService<User, Long, UserRepository> {
         return repository.save(user);
     }
 
-    public User findByUserName(String name) {
+    public User getByUserName(String name) {
        return repository.findByUserName(name);
     }
    public User verifyUser(Long id, String accessCode, String email){
         User user = repository.findByIdAndAccessCodeCodeAndEmail(id, accessCode, email).orElseThrow(() -> new NotFoundException("Під час верифікації користувача виникла помилка"));
         user.setVerified(true);
         return repository.save(user);
+   }
+
+   public Optional<User> getByAccessCode(String accessCode){
+      return repository.findByAccessCodeCode(accessCode);
    }
 }

@@ -1,3 +1,4 @@
+/*
 package com.education.constitution.service;
 
 import com.education.constitution.exception.NotFoundException;
@@ -39,3 +40,4 @@ public class FinalTestResultMapper {
         return testResult;
     }
 }
+*/

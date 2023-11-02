@@ -1,3 +1,4 @@
+/*
 package com.education.constitution.repository.tests;
 
 import com.education.constitution.model.tests.FinalTest;
@@ -11,3 +12,4 @@ public interface FinalTestRepository extends BaseRepository<FinalTest, Long> {
     Optional<FinalTest> findByLessonBlockId(Long lessonBlockId);
 }
 
+*/

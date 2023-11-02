@@ -9,6 +9,8 @@ public class TestResultDTO {
 
     private long lessonId;
 
+    private long lessonBlockId;
+
     public long getUserId() {
         return userId;
     }
@@ -47,5 +49,13 @@ public class TestResultDTO {
 
     public void setLessonId(long lessonId) {
         this.lessonId = lessonId;
+    }
+
+    public long getLessonBlockId() {
+        return lessonBlockId;
+    }
+
+    public void setLessonBlockId(long lessonBlockId) {
+        this.lessonBlockId = lessonBlockId;
     }
 }

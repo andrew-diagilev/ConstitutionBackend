@@ -1,3 +1,4 @@
+/*
 package com.education.constitution.model.tests;
 
 import com.education.constitution.model.users.User;
@@ -65,3 +66,4 @@ public class FinalTestResult {
         this.test = test;
     }
 }
+*/

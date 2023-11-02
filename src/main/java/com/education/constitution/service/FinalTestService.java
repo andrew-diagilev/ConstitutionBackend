@@ -1,3 +1,4 @@
+/*
 package com.education.constitution.service;
 
 import com.education.constitution.exception.NotFoundException;
@@ -50,3 +51,4 @@ public class FinalTestService extends AbstractService<FinalTest, Long, FinalTest
                         .ifPresent(a -> a.setAnswered(true)));
     }
 }
+*/

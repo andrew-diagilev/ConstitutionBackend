@@ -1,6 +1,5 @@
 package com.education.constitution.controller.lessons;
 
-import com.education.constitution.model.lessons.Lesson;
 import com.education.constitution.model.lessons.LessonBlock;
 import com.education.constitution.service.LessonBlockService;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +19,8 @@ public class LessonBlockController {
     }
 
     @GetMapping
-    public ResponseEntity<List<LessonBlock>> getAllLessons() {
-        return ResponseEntity.ok(lessonBlockService.getAll());
+    public ResponseEntity<List<LessonBlock>> getAllLessonBlocksWithTestResult() {
+        return ResponseEntity.ok(lessonBlockService.getAllLessonBlocksWithTestResult());
     }
 }
 

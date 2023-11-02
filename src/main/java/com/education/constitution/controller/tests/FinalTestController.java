@@ -1,3 +1,4 @@
+/*
 package com.education.constitution.controller.tests;
 
 import com.education.constitution.model.DTO.FinalTestResultDTO;
@@ -39,4 +40,4 @@ public class FinalTestController {
         finalTestService.createFinalTestResult(testResult);
         return finalTestService.getFinalTestByLessonBlockIdAndUserId(testResultDTO.getLessonBlockId(), testResultDTO.getUserId());
     }
-}
+}*/

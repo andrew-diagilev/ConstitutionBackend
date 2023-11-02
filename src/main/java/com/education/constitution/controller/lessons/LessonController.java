@@ -18,7 +18,7 @@ public class LessonController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Lesson>> getAllLessons() {
-        return ResponseEntity.ok(lessonService.getAll());
-    }
+    public ResponseEntity<List<Lesson>> getAllLessonsWithTestResult() {
+        return ResponseEntity.ok(lessonService.getAllLessonsWithTestResult());
+    }/*ResponseEntity.status(HttpStatus.NOT_FOUND).body("dsfsdfsdfsdfdsf");*/
 }

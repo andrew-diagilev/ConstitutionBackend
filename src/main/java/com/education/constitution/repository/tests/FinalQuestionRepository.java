@@ -1,3 +1,4 @@
+/*
 package com.education.constitution.repository.tests;
 
 import com.education.constitution.model.tests.FinalQuestion;
@@ -9,3 +10,4 @@ public interface FinalQuestionRepository extends BaseRepository<FinalQuestion, L
 }
 
 
+*/

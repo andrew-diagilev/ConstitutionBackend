@@ -1,25 +1,16 @@
 package com.education.constitution.model.lessons;
 
+import com.education.constitution.model.AbstractEntity;
 import jakarta.persistence.*;
 
 @Entity
-public class Summary {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Summary extends AbstractEntity {
+
     @OneToOne
     @JoinColumn(name = "lesson_id")
     private Lesson lesson;
     @Column(columnDefinition = "TEXT")
     private String text;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Lesson getLesson() {
         return lesson;
