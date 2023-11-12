@@ -1,4 +1,4 @@
-package com.education.constitution.repository.tests;
+package com.education.constitution.utils.tests;
 
 import com.education.constitution.model.DTO.TestGeneralResultDTO;
 import com.education.constitution.model.DTO.TestIndicatorResultDTO;
@@ -74,5 +74,7 @@ public interface TestResultRepository extends BaseRepository<TestResult, Long> {
                     "GROUP BY t.id, t.type " +
                     "HAVING t.type = :testType", nativeQuery = true)
     List<TestIndicatorResultDTO> getTestResultsForUserAndType(@Param("userId") Long userId, @Param("testType") String testType);
+
+    void deleteByTestIdAndUserId(Long testId, Long userId);
 
 }

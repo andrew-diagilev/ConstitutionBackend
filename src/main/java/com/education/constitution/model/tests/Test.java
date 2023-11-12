@@ -1,5 +1,6 @@
 package com.education.constitution.model.tests;
 
+import com.education.constitution.model.AbstractEntity;
 import com.education.constitution.model.lessons.Lesson;
 
 import com.education.constitution.model.lessons.LessonBlock;
@@ -9,9 +10,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class Test {
-    @Id
-    private Long id;
+public class Test extends AbstractEntity {
 
     private String type;
 
@@ -27,14 +26,6 @@ public class Test {
 
     @OneToMany(mappedBy = "test", cascade = CascadeType.ALL)
     private List<Question> questions;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getType() {
         return type;

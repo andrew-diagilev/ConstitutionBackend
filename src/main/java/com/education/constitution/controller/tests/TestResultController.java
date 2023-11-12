@@ -2,10 +2,8 @@ package com.education.constitution.controller.tests;
 
 import com.education.constitution.model.DTO.TestGeneralResultDTO;
 import com.education.constitution.service.TestResultService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -22,5 +20,11 @@ public class TestResultController {
     @GetMapping("/general")
     public Map<String, TestGeneralResultDTO> getTestResultByUserId(@RequestParam Long userId) {
         return testResultService.getResultForUserId(userId);
+    }
+
+    @DeleteMapping ("/{testId}")
+    public ResponseEntity deleteTestResult(@PathVariable  Long testId) {
+        testResultService.deleteByTestId(testId);
+        return ResponseEntity.ok().build();
     }
 }

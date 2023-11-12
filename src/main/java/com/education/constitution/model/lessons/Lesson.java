@@ -1,8 +1,6 @@
 package com.education.constitution.model.lessons;
 
-import com.education.constitution.model.AbstractEntity;
 import com.education.constitution.model.AbstractLessonItem;
-import com.education.constitution.model.DTO.TestIndicatorResultDTO;
 import com.education.constitution.model.tests.Test;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

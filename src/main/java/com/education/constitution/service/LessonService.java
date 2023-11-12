@@ -3,7 +3,7 @@ package com.education.constitution.service;
 import com.education.constitution.model.DTO.TestIndicatorResultDTO;
 import com.education.constitution.model.lessons.Lesson;
 import com.education.constitution.repository.lessons.LessonRepository;
-import com.education.constitution.repository.tests.TestResultRepository;
+import com.education.constitution.utils.tests.TestResultRepository;
 import com.education.constitution.utils.UserDetailsProvider;
 import org.springframework.stereotype.Service;
 

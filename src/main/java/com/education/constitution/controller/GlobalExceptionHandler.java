@@ -39,6 +39,7 @@ public class GlobalExceptionHandler {
         logger.error("UsernameNotFoundException: " + ex.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
+
 }
 
 

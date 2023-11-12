@@ -1,12 +1,11 @@
 package com.education.constitution.model.tests;
 
+import com.education.constitution.model.AbstractEntity;
 import jakarta.persistence.*;
 
 @Entity
-public class Answer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Answer extends AbstractEntity {
+
     @Column(columnDefinition = "TEXT")
     private String text;
     private boolean correct;
@@ -17,14 +16,6 @@ public class Answer {
 
     @Transient
     private boolean answered;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getText() {
         return text;

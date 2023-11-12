@@ -1,10 +1,9 @@
 package com.education.constitution.service;
 
 import com.education.constitution.model.DTO.TestIndicatorResultDTO;
-import com.education.constitution.model.lessons.Lesson;
 import com.education.constitution.model.lessons.LessonBlock;
 import com.education.constitution.repository.lessons.LessonBlockRepository;
-import com.education.constitution.repository.tests.TestResultRepository;
+import com.education.constitution.utils.tests.TestResultRepository;
 import com.education.constitution.utils.UserDetailsProvider;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +27,6 @@ public class LessonBlockService extends AbstractService<LessonBlock, Long, Lesso
         Long userId = userDetailsProvider.getCurrentUserId();
         List<LessonBlock> allLessonBlocks = repository.findAll();
         List<TestIndicatorResultDTO> testResults = testResultRepository.getTestResultsForUserAndType(userId, "block");
-
         return testResultMappingService.mapItemsWithTestResult(allLessonBlocks, testResults);
 
     }

@@ -1,14 +1,12 @@
 package com.education.constitution.model.tests;
 
+import com.education.constitution.model.AbstractEntity;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
-public class Question {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Question extends AbstractEntity {
     @Column(columnDefinition = "TEXT")
     private String text;
 
@@ -19,15 +17,6 @@ public class Question {
     @ManyToOne
     @JoinColumn(name = "test_id")
     private Test test;
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getText() {
         return text;

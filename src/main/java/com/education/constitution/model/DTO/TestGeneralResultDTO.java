@@ -2,7 +2,6 @@ package com.education.constitution.model.DTO;
 
 public interface TestGeneralResultDTO {
 
-
     String getTestType();
     Long getTotalTests();
     Long getPassedTests();

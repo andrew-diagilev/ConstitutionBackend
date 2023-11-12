@@ -2,7 +2,7 @@ package com.education.constitution.controller.lessons;
 
 import com.education.constitution.exception.NotFoundException;
 import com.education.constitution.model.lessons.Summary;
-import com.education.constitution.repository.tests.TestResultRepository;
+import com.education.constitution.utils.tests.TestResultRepository;
 import com.education.constitution.service.SummaryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -4,8 +4,8 @@ import com.education.constitution.exception.NotFoundException;
 import com.education.constitution.model.tests.Answer;
 import com.education.constitution.model.tests.Test;
 import com.education.constitution.model.tests.TestResult;
-import com.education.constitution.repository.tests.TestRepository;
-import com.education.constitution.repository.tests.TestResultRepository;
+import com.education.constitution.utils.tests.TestRepository;
+import com.education.constitution.utils.tests.TestResultRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

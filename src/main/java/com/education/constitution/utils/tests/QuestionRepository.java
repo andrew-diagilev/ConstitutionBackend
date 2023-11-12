@@ -1,4 +1,4 @@
-package com.education.constitution.repository.tests;
+package com.education.constitution.utils.tests;
 
 import com.education.constitution.model.tests.Question;
 import com.education.constitution.repository.BaseRepository;
