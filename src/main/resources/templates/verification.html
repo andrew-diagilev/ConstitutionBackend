@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-image: url('https://opossum.com.ua/constitution/bg02.png');
+      background-size: cover;
+      background-position: center;
+      color: #00325B;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    .text-container {
+      font-size: 1.2em;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .header-image {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+  <title>Регистрация подтверждена</title>
+</head>
+<body>
+<img class="header-image" src="https://opossum.com.ua/constitution/Asset33.png" alt="Заголовочное изображение">
+<h1 th:text="'Реєстрація користувача ' + ${userName} + ' підтверджена'"></h1>
+<div class="text-container">
+  <p>Перейдіть у додаток та введіть облікові дані (електронну пошту і пароль вказані при реєстрації).</p>
+</div>
+</body>
+</html>

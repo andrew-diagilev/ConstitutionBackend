@@ -9,7 +9,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 
 @RestController
@@ -54,12 +56,12 @@ public class RegistrationController {
         }
     }
 
-    @GetMapping("verify_user")
-    @ResponseBody
-    public ResponseEntity<String> verifyUser(@RequestParam Long id, @RequestParam String accessCode, @RequestParam String email) {
+    @GetMapping("/verify_user")
+    public ModelAndView verifyUser(@RequestParam Long id, @RequestParam String accessCode, @RequestParam String email) {
         User user = userService.verifyUser(id, accessCode, email);
-        return ResponseEntity.ok("Користувача " + user.getUserName() + " успішно веріфіковано");
-
+        ModelAndView modelAndView = new ModelAndView("verification");
+        modelAndView.addObject("userName", user.getUserName());
+        return modelAndView;
     }
 
 }

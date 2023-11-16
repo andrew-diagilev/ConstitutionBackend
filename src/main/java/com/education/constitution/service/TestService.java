@@ -4,6 +4,7 @@ import com.education.constitution.exception.NotFoundException;
 import com.education.constitution.model.tests.Answer;
 import com.education.constitution.model.tests.Test;
 import com.education.constitution.model.tests.TestResult;
+import com.education.constitution.utils.UserDetailsProvider;
 import com.education.constitution.utils.tests.TestRepository;
 import com.education.constitution.utils.tests.TestResultRepository;
 import org.springframework.stereotype.Service;
@@ -16,10 +17,12 @@ import java.util.stream.Collectors;
 public class TestService extends AbstractService<Test, Long, TestRepository> {
 
     private final TestResultRepository testResultRepository;
+    private final UserDetailsProvider userDetailsProvider;
 
-    public TestService(TestRepository testRepository, TestResultRepository testResultRepository) {
+    public TestService(TestRepository testRepository, TestResultRepository testResultRepository, UserDetailsProvider userDetailsProvider) {
         super(testRepository);
         this.testResultRepository = testResultRepository;
+        this.userDetailsProvider = userDetailsProvider;
     }
 
     public Test createTestResult(TestResult testResult) {
@@ -27,20 +30,10 @@ public class TestService extends AbstractService<Test, Long, TestRepository> {
         return repository.findById(Long.valueOf(1)).get();
     }
 
-    public Test getTestByLessonId(Long lessonId) {
-        return repository.findByLessonId(lessonId).orElseThrow(() -> new NotFoundException("Test not found with lessonId: " + lessonId));
-    }
-
-    public Test getTestByLessonIdAndUserId(Long lessonId, Long userId) {
-        Test test = repository.findByLessonId(lessonId).orElseThrow(() -> new NotFoundException("Test not found with lessonId: " + lessonId));
-        List<TestResult> testResultList = testResultRepository.findByTestIdAndUserId(test.getId(), userId);
-        updateAnsweredField(testResultList, test);
-        return test;
-    }
-
-    public Test getTestByLessonBlockIdAndUserId(Long lessonBlockId, Long userId) {
-        Test test = repository.findByLessonBlockId(lessonBlockId).orElseThrow(() -> new NotFoundException("Test not found with lessonBlockId: " + lessonBlockId));
-        List<TestResult> testResultList = testResultRepository.findByTestIdAndUserId(test.getId(), userId);
+    public Test getTestById(Long testId) {
+        Long userId = userDetailsProvider.getCurrentUserId();
+        Test test = repository.findById(testId).orElseThrow(() -> new NotFoundException("Test not found with Id: " + testId));
+        List<TestResult> testResultList = testResultRepository.findByTestIdAndUserId(testId, userId);
         updateAnsweredField(testResultList, test);
         return test;
     }
@@ -61,7 +54,4 @@ public class TestService extends AbstractService<Test, Long, TestRepository> {
                         .findFirst()
                         .ifPresent(a -> a.setAnswered(true)));
     }
-
-// Другие методы сервиса (если требуется)
-
 }

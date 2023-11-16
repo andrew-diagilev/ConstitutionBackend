@@ -13,11 +13,9 @@ import java.util.List;
 @RequestMapping("/api/lesson_blocks")
 public class LessonBlockController {
     private final LessonBlockService lessonBlockService;
-
     public LessonBlockController(LessonBlockService lessonBlockService) {
         this.lessonBlockService = lessonBlockService;
     }
-
     @GetMapping
     public ResponseEntity<List<LessonBlock>> getAllLessonBlocksWithTestResult() {
         return ResponseEntity.ok(lessonBlockService.getAllLessonBlocksWithTestResult());

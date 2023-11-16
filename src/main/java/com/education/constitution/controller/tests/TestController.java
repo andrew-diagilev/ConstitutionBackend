@@ -21,15 +21,8 @@ public class TestController {
     }
 
     @GetMapping("/")
-    public Test getTestByLessonId(@RequestParam Long lessonId, @RequestParam Long userId) {
-        //Тестовая тсрока
-       return testService.getTestByLessonIdAndUserId(lessonId, userId);
-    }
-
-    @GetMapping("/final")
-    public Test getTestByLessonBlockId(@RequestParam Long lessonBlockId, @RequestParam Long userId) {
-        //Тестовая тсрока
-        return testService.getTestByLessonBlockIdAndUserId(lessonBlockId, userId);
+    public Test getTestById(@RequestParam Long testId) {
+       return testService.getTestById(testId);
     }
 
     @PostMapping("/submit-answer")
@@ -38,15 +31,6 @@ public class TestController {
     public Test create(@RequestBody TestResultDTO testResultDTO) {
         TestResult testResult = testResultMapper.dtoToEntity(testResultDTO);
         testService.createTestResult(testResult);
-        return testService.getTestByLessonIdAndUserId(testResultDTO.getLessonId(), testResultDTO.getUserId());
-    }
-
-    @PostMapping("final/submit-answer")
-    @ResponseStatus(HttpStatus.CREATED)
-    @ResponseBody
-    public Test createFinal(@RequestBody TestResultDTO testResultDTO) {
-        TestResult testResult = testResultMapper.dtoToEntity(testResultDTO);
-        testService.createTestResult(testResult);
-        return testService.getTestByLessonBlockIdAndUserId(testResultDTO.getLessonBlockId(), testResultDTO.getUserId());
+        return testService.getTestById(testResultDTO.getTestId());
     }
 }
